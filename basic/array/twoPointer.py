@@ -11,4 +11,4 @@ def twoSum(nums, target):
 
     return False
 
-print(twoSum([1,23,4,6,7,23,], 7))        
+print(twoSum([1,23,4,6,7,23,], 7))       
