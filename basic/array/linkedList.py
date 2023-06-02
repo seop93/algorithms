@@ -51,11 +51,20 @@ class LikedList(object):
             for _ in range(idx-1):
                 current = current.next
             current.next = current.next.next
-
+    
+    def size(self):
+        count = 0
+        current = self.head
+        while current:
+            count += 1
+            current = current.next
+        return count
 
 ll = LikedList()
 ll.append(1)
 ll.append(2)
 ll.append(3)
 ll.append(4)
+size = ll.size()
+print(size)
 

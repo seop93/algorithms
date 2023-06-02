@@ -1,6 +1,6 @@
 class BrowserHistory(object):
     def __init__(self, homepage):
-        pass
+        self.homepage = homepage
 
     def visit(self, url):
         pass
