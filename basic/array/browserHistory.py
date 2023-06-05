@@ -8,10 +8,10 @@ class ListNode(object):
 
 class BrowserHistory(object):
     def __init__(self, homepage):
-        self.head = self.current = ListNode(val=homepage)
+        self.head = self.current = ListNode(val=homepage)  # 형식상 head 정의
 
     def visit(self, url):
-        self.current.next = ListNode(val=url, prev=self.current)
+        self.current.next = ListNode(val=url, prev=self.current)  # LinkedList 장점 추가삭제 용이
         self.current = self.current.next
         return None
 
