@@ -1,51 +1,42 @@
-# leetcode - 1472
+# array
 
-[문제 링크](https://leetcode.com/problems/design-browser-history/)
+메모리에 저장된 데이터에 접근하려면 **주소값**을 알아야 한다.
+배열변수는 자신이 할당받은 메모리의 첫 번째 주소값을 가리킵니다.
+배열은 연속적/순차적으로 저장되어 있기 때문에 첫 주소값만 알고 있다면 어떤 index에도 즉시 접근이 가능합니다.
+한번의 연산으로 원하는 데이터에 바로 접근할 수 있습니다. **O(1)**의 시간복잡도
 
-### 분류
+1. 고정된 저장공간
+2. 연속/순차적
+이런 문제점을 해결할 수 있는 것이 바로 dynamic array
 
-LinkedList 자료구조
+---
+# dynamic array
 
-### 문제 설명
+Resizing 시간복잡도 O(n)
+기존의 할당된 **size 보다 초과하면 size 늘린 배열을 새로 선언**
+기존 배열은 메모리에서 삭제
+resize는 한칸 씩하면 비효율 적이기 때문에 2배 큰 크기로 resize
 
-한 개의 탭을 가진 브라우저가 있습니다. 이 브라우저는 홈페이지에서 시작하고, 다른 URL을 방문하거나, 히스토리에서 일정한 단계만큼 뒤로 이동하거나 앞으로 이동할 수 있습니다.
+# 배열의 다양한 활용
 
-BrowserHistory 클래스를 구현하세요:
+1. 반복문
+2. Sort$Two Pointer
+**시간복잡도 O(nlogn)**
 
-- BrowserHistory(string homepage): 브라우저의 홈페이지로 객체를 초기화합니다.
-- void visit(string url): 현재 페이지에서 url을 방문합니다. 앞으로의 히스토리를 모두 지웁니다.
-- string back(int steps): 히스토리에서 steps만큼 뒤로 이동합니다. 히스토리에서 x 단계만큼만 이동할 수 있고, steps > x인 경우, 최대 x 단계만큼만 이동합니다. 이동한 후의현재 URL을 반환합니다.
-- string forward(int steps): 히스토리에서 steps만큼 앞으로 이동합니다. 히스토리에서 x 단계만큼만 앞으로 이동할 수 있고, steps > x인 경우, 최대 x 단계만큼만 이동합니다. 이동한 후의 현재 URL을 반환합니다.
+---
+# LinkedList
 
-### 입력
+- Linked List는 Node 라는 구조체가 연결되는 형식으로 데이터를 저장하는 자료구조
+- Node는 데이터 값과 주소값을 저장한다.
+- 메모리상에서는 비연속적으로 저장이 되어 있다
+- 각각의 node가 next node의 메모리 주소값을 가리킴 **논리적인 연속성**
+- 선형 자료구조 + 중간에 데이터(추가/삭제 용이)
 
-```python
-BrowserHistory browserHistory = new BrowserHistory("leetcode.com"); // 현재 페이지는 "leetcode.com" 입니다.
-browserHistory.visit("google.com"); // 현재 페이지는 "google.com" 입니다.
-browserHistory.visit("facebook.com"); // 현재 페이지는 "facebook.com" 입니다.
-browserHistory.visit("youtube.com"); // 현재 페이지는 "youtube.com" 입니다.
-browserHistory.back(1); // 현재 페이지는 "facebook.com" 입니다.
-browserHistory.back(1); // 현재 페이지는 "google.com" 입니다.
-browserHistory.forward(1); // 현재 페이지는 "facebook.com" 입니다.
-browserHistory.visit("linkedin.com"); // 현재 페이지는 "linkedin.com" 입니다.
-browserHistory.forward(2); // 현재 페이지는 "linkedin.com" 입니다.
-browserHistory.back(2); // 현재 페이지는 "google.com" 입니다.
-browserHistory.back(7); // 현재 페이지는 "leetcode.com" 입니다.
+## 물리적 비연속적, 논리적 연속적
 
-```
-
-### 출력
-
-```python
-"leetcode.com" // 초기 홈페이지
-"google.com"
-"facebook.com"
-"youtube.com"
-"facebook.com"
-"google.com"
-"facebook.com"
-"linkedin.com"
-"linkedin.com"
-"google.com"
-"leetcode.com"
-```
+각 Node들은 데이터를 저장할 뿐 아니라, next node의 address정보도 가지고 있기 때문에 논리적으로 연속성을
+유지하면서 연결될 수 있다.
+Linked list에는 메모리상에서 연속성을 유지하지 않아도 되기 떄문에 메모리 사용이 좀 더 자유롭다.
+next node의 address도 추가적으로 저장해야 하기 때문에 데이터 하나당 차지하는 메모리가 크다
+**LikedList는 꼭 head 값을가져야 한다.**
+tail 이나 previous 같은 변수를 설정할 수 도있다.
