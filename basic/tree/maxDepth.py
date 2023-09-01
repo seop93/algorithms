@@ -1,5 +1,6 @@
 from collections import deque
 
+# bfs
 
 def maxDepth(root):
     max_depth = 0
