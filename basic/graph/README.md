@@ -23,3 +23,9 @@
 - 인접 리스트(adjacency list)
 - 인접 행렬(adjacency matrix)
 - **암시적 그래프(implicit graph)**
+
+## 그래프 순회 Graph Traversal
+
+그래프 순회란 그래프 탐색(search)라고도 불리우며 그래프의 각 정점을 방문하는 과정을 말한다. 그래프 순회에는 크게 깊이 우선 탐색
+(Depth-First Search)과 너비 우선 탐색(Breadth-First Search)의 2가지 알고리즘이 있다.
+
