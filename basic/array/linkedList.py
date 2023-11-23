@@ -1,14 +1,16 @@
-class Node :
-    def __init__(self, value=0, next =None):
+class Node:
+    def __init__(self, value=0, next=None):
         self.value = value
         self.next = next
+
 
 first = Node(1)
 second = Node(2)
 third = Node(3)
-first. next = second
+first.next = second
 second.next = third
 first.value = 6
+
 
 class LikedList(object):
     def __init__(self):
@@ -50,8 +52,9 @@ class LikedList(object):
             current = self.head
             for _ in range(idx-1):
                 current = current.next
+            print(current.next.value)
             current.next = current.next.next
-    
+
     def size(self):
         count = 0
         current = self.head
@@ -60,11 +63,11 @@ class LikedList(object):
             current = current.next
         return count
 
+
 ll = LikedList()
 ll.append(1)
 ll.append(2)
 ll.append(3)
 ll.append(4)
-size = ll.size()
-print(size)
+print(ll.remove(1))
 

@@ -1,4 +1,4 @@
-def dailyTemperatures(temperatures):
+def daily_temperatures(temperatures):
     ans = [0] * len(temperatures)
     stack = []
     for cur_day, cur_temp in enumerate(temperatures):

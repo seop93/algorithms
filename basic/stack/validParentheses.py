@@ -1,4 +1,4 @@
-def isValid(s):
+def is_valid(s):
     stack = []
     for p in s:
         if p == "(":
@@ -10,3 +10,4 @@ def isValid(s):
         elif not stack or stack.pop() != p:
             return False
     return not stack
+

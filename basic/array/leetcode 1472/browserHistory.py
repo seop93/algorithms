@@ -5,7 +5,6 @@ class ListNode(object):
         self.prev = prev
 
 
-
 class BrowserHistory(object):
     def __init__(self, homepage):
         self.head = self.current = ListNode(val=homepage)  # 형식상 head 정의
@@ -16,18 +15,18 @@ class BrowserHistory(object):
         return None
 
     def back(self, steps):
-        while steps > 0 and self.current.prev != None:
+        while steps > 0 and self.current.prev is not None:
             steps -= 1
             self.current = self.current.prev
         return self.current.val
 
     def forward(self, steps):
-        while steps > 0 and self.current.next != None:
+        while steps > 0 and self.current.next is not None:
             steps -= 1
             self.current = self.current.next
         return self.current.val
 
-    
+
 
 browserHistory = BrowserHistory("leetcode.com")
 browserHistory.visit("google.com")
