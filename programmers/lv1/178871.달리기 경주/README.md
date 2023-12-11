@@ -1,6 +1,6 @@
 # [level 1]  달리기 경주 - 178871
 
-[문제링크](https://school.programmers.co.kr/learn/courses/30/lessons/176963)
+[문제링크](https://school.programmers.co.kr/learn/courses/30/lessons/178871)
 
 
 ### 성능 요약
