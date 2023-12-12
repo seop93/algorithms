@@ -1,6 +1,5 @@
 answer = []
 max_num = 0
-n = 0
 for i in range(9):
     list_n = list(map(int, input().split()))
     if max_num <= max(list_n):
