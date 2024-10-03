@@ -1,39 +1,35 @@
 import java.util.*;
 
-public class Solution {
-    private static boolean isValidRegion(int nx, int ny) {
-        return 0 <= nx && nx < 11 && 0 <= ny && ny < 11;
-    }
-
-    private static final HashMap<Character, int[]> location = new HashMap<>();
-
-    private static void initLocation() {
-        location.put('U', new int[]{0, 1});
-        location.put('D', new int[]{0, -1});
-        location.put('R', new int[]{1, 0});
-        location.put('L', new int[]{-1, 0});
-    }
-
+class Solution {
     public int solution(String dirs) {
-        initLocation();
+         Map<Character, int[]> way = new HashMap<>();
+        way.put('U', new int[]{0, 1});
+        way.put('R', new int[]{1, 0});
+        way.put('L', new int[]{-1, 0});
+        way.put('D', new int[]{0, -1});
+        
         int x = 5;
         int y = 5;
-        HashSet<String> answer = new HashSet<>();
-        
+
+        Set<String> answer = new HashSet<>();
+
         for (int i = 0; i < dirs.length(); i++) {
-            int[] offset = location.get(dirs.charAt(i));
+
+            int[] offset = way.get(dirs.charAt(i));
+
             int nx = x + offset[0];
             int ny = y + offset[1];
-            if (!isValidRegion(nx, ny)) continue;
+
+            if (nx < 0 || nx >= 11 || ny < 0 || ny >= 11) continue;
 
             answer.add(x + " " + y + " " + nx + " " + ny);
             answer.add(nx + " " + ny + " " + x + " " + y);
 
             x = nx;
             y = ny;
-        }
 
-        
+
+        }
 
         return answer.size() / 2;
     }
